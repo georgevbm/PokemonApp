@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
+
 import br.com.george.pokemonapp.Adapter.TypeAdapter;
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.Model.TypeReturn;
@@ -23,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Type> types;
     private ArrayList<TypeStyle> styles;
     private TypeAdapter adapter;
+    private GridView gridTypes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.listTypes = (ListView) findViewById(R.id.list_types);
+        this.gridTypes = (GridView) findViewById(R.id.grid_types);
         types = new ArrayList<>();
 
         populateStylesType();
@@ -59,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 adapter = new TypeAdapter(MainActivity.this, types);
-                listTypes.setAdapter(adapter);
+                gridTypes.setAdapter(adapter);
 
-                listTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                gridTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                       Log.i("Type", String.valueOf(position));
+                        Toast.makeText(MainActivity.this, "Position: " + position, Toast.LENGTH_SHORT).show();
                     }
                 });
             }

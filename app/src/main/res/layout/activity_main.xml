@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".Activity.MainActivity">
 
     <TextView
@@ -17,15 +16,10 @@
         android:textAlignment="center"
         android:padding="8dp"/>
 
-    <!--<GridView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:numColumns="2"></GridView>-->
-
-    <ListView
-        android:id="@+id/list_types"
+    <GridView
+        android:id="@+id/grid_types"
         android:layout_width="match_parent"
-        android:divider="@android:color/white"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="match_parent"
+        android:numColumns="2"></GridView>
 
 </LinearLayout>
