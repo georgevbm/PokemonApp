@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(R.string.select_type);
 
         this.gridTypes = (GridView) findViewById(R.id.grid_types);
         types = new ArrayList<>();

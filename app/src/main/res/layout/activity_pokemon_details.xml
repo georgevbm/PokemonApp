@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:gravity="center_horizontal"
+    android:background="@drawable/backgroun_gradient"
     android:orientation="vertical"
     tools:context=".Activity.PokemonDetailsActivity">
 
@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@android:color/white"
         android:textSize="45sp"
         android:textStyle="bold" />
 
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="8dp"
+            android:textColor="@android:color/white"
             android:text="Weight:"
             android:textSize="22sp" />
 
@@ -40,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
             android:text="0kg"
             android:textSize="22sp" />
 
@@ -47,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:textColor="@android:color/white"
             android:text="/"
             android:textSize="22sp" />
 
@@ -54,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
             android:paddingRight="8dp"
             android:text="Height:"
             android:textSize="22sp" />
@@ -63,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
             android:text="0cm"
             android:textSize="22sp" />
     </LinearLayout>
@@ -72,6 +78,7 @@
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
