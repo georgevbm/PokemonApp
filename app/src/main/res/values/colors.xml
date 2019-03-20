@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="colorNormal">#8E966D</color>
+    <color name="colorNormal">#D4D4D4</color>
     <color name="colorFighting">#C49248</color>
     <color name="colorFlying">#03A9F4</color>
     <color name="colorPoison">#673AB7</color>

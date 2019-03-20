@@ -2,15 +2,16 @@ package br.com.george.pokemonapp.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     private int id;
     private String name;
     private double weight;
     private double height;
-//    private ArrayList<String> abilities;
-//    private ArrayList sprites;
-
+    private ArrayList abilities;
+    private Sprite sprites;
 
     public int getId() {
         return id;
@@ -40,6 +41,20 @@ public class Pokemon {
         this.height = height;
     }
 
+    public ArrayList getAbilities() {
+        return abilities;
+    }
+    public void setAbilities(ArrayList abilities) {
+        this.abilities = abilities;
+    }
+
+    public Sprite getSprites() {
+        return sprites;
+    }
+    public void setSprites(Sprite sprites) {
+        this.sprites = sprites;
+    }
+
     @Override
     public String toString() {
         return "Pokemon{" +
@@ -47,6 +62,8 @@ public class Pokemon {
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
                 ", height=" + height +
+                ", abilities=" + abilities +
+                ", sprites=" + sprites +
                 '}';
     }
 }

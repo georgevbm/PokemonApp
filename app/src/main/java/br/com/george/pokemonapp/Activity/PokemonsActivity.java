@@ -1,8 +1,11 @@
 package br.com.george.pokemonapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -51,17 +54,36 @@ public class PokemonsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PokemonReturn> call, Response<PokemonReturn> response) {
                 PokemonReturn pokemonReturn = response.body();
-                Log.i("PokemonService   ", pokemonReturn.toString());
 
                 for(PokemonSecondReturn ptr: pokemonReturn.getPokemon()){
-                    PokemonListStyle pls = new PokemonListStyle(ptr.getPokemon().getName(), backgrounType);
+                    String codPokemon = ptr.getPokemon().getUrl().substring(ptr.getPokemon().getUrl().length() - 4).replace("/", "").replace("n", "");
+                    PokemonListStyle pls = new PokemonListStyle(ptr.getPokemon().getName(), backgrounType, codPokemon);
                     pokemonNames.add(pls);
                 }
 
                 adapter = new PokemonListAdapter(PokemonsActivity.this, pokemonNames);
                 listPokemons.setAdapter(adapter);
 
+                listPokemons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(PokemonsActivity.this, PokemonDetailsActivity.class);
 
+                        String n = pokemonNames.get(i).getName().substring(0, 1).toUpperCase().concat(pokemonNames.get(i).getName().substring(1)).replace("-", " ");
+                        String[] partes = n.split(" ");
+
+                        StringBuilder sb = new StringBuilder();
+                        for (int j = 0; j < partes.length; j++) {
+                            String word = partes[j];
+                            word = word.substring(0, 1).toUpperCase() + word.substring(1);
+                            sb.append(" ").append(word);
+                        }
+
+                        intent.putExtra("codPokemon", pokemonNames.get(i).getCod());
+                        intent.putExtra("namePokemon", sb.toString());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

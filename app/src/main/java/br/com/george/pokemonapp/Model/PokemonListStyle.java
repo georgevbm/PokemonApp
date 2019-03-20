@@ -4,10 +4,12 @@ public class PokemonListStyle {
 
     private String name;
     private int background;
+    private String cod;
 
-    public PokemonListStyle(String name, int background) {
+    public PokemonListStyle(String name, int background, String cod) {
         this.name = name;
         this.background = background;
+        this.cod = cod;
     }
 
     public String getName() {
@@ -22,5 +24,12 @@ public class PokemonListStyle {
     }
     public void setBackground(int background) {
         this.background = background;
+    }
+
+    public String getCod() {
+        return cod;
+    }
+    public void setCod(String cod) {
+        this.cod = cod;
     }
 }

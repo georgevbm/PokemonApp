@@ -1,5 +1,6 @@
 package br.com.george.pokemonapp.Util;
 
+import br.com.george.pokemonapp.Model.Pokemon;
 import br.com.george.pokemonapp.Return.PokemonReturn;
 import br.com.george.pokemonapp.Return.TypeReturn;
 import retrofit2.Call;
@@ -15,5 +16,5 @@ public interface PokemonService {
     Call<PokemonReturn> getPokemonTypes(@Path("codType") String codType);
 
     @GET("pokemon/{codPokemon}")
-    Call<PokemonReturn> getPokemon(@Path("codPokemon") String codPokemon);
+    Call<Pokemon> getPokemon(@Path("codPokemon") String codPokemon);
 }
