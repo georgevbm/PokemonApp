@@ -1,4 +1,4 @@
-package br.com.george.pokemonapp.Model;
+package br.com.george.pokemonapp.Style;
 
 public class TypeStyle {
 

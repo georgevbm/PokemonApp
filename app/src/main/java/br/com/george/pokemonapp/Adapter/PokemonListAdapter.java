@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import br.com.george.pokemonapp.Model.PokemonListStyle;
+import br.com.george.pokemonapp.Style.PokemonListStyle;
 import br.com.george.pokemonapp.R;
 
 public class PokemonListAdapter extends ArrayAdapter {

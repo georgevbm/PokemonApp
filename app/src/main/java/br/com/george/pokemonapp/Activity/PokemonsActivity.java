@@ -12,7 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import br.com.george.pokemonapp.Adapter.PokemonListAdapter;
-import br.com.george.pokemonapp.Model.PokemonListStyle;
+import br.com.george.pokemonapp.Style.PokemonListStyle;
 import br.com.george.pokemonapp.R;
 import br.com.george.pokemonapp.Return.PokemonReturn;
 import br.com.george.pokemonapp.Return.PokemonSecondReturn;

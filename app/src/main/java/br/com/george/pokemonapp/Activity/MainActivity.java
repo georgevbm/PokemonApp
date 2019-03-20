@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import br.com.george.pokemonapp.Adapter.TypeAdapter;
 import br.com.george.pokemonapp.Model.Type;
-import br.com.george.pokemonapp.Model.TypeStyle;
+import br.com.george.pokemonapp.Style.TypeStyle;
 import br.com.george.pokemonapp.R;
 import br.com.george.pokemonapp.Return.PokemonThirdReturn;
 import br.com.george.pokemonapp.Return.TypeReturn;
