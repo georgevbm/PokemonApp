@@ -36,15 +36,15 @@ public class TypeAdapter extends ArrayAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.adapter_types, parent, false);
 
-            ImageView iconType1 = (ImageView) view.findViewById(R.id.icon_type);
-            TextView nameType1 = (TextView) view.findViewById(R.id.name_type);
-            LinearLayout llType1 = (LinearLayout) view.findViewById(R.id.layout_type);
+            ImageView iconType = (ImageView) view.findViewById(R.id.icon_type);
+            TextView nameType = (TextView) view.findViewById(R.id.name_type);
+            LinearLayout llType = (LinearLayout) view.findViewById(R.id.layout_type);
 
             Type type = types.get(position);
 
-            nameType1.setText(type.getName());
-            iconType1.setImageResource(type.getStyle().getIcon());
-            llType1.setBackgroundResource(type.getStyle().getBackground());
+            nameType.setText(type.getName());
+            iconType.setImageResource(type.getStyle().getIcon());
+            llType.setBackgroundResource(type.getStyle().getBackground());
         }
 
         return view;

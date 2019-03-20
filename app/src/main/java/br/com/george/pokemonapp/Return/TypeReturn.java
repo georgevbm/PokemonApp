@@ -1,7 +1,9 @@
-package br.com.george.pokemonapp.Model;
+package br.com.george.pokemonapp.Return;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
+
+import br.com.george.pokemonapp.Model.Type;
 
 @JsonIgnoreProperties({"next", "previous"})
 public class TypeReturn {

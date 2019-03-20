@@ -1,7 +1,6 @@
 package br.com.george.pokemonapp.Model;
 
 public class Type {
-
     private int cod;
     private String name;
     private TypeStyle style;
