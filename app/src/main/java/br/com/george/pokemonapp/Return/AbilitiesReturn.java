@@ -1,21 +1,24 @@
 package br.com.george.pokemonapp.Return;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import br.com.george.pokemonapp.Model.Ability;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AbilitiesReturn {
-    private ArrayList abilities;
+    private Ability ability;
 
-    public ArrayList getAbilities() {
-        return abilities;
+    public Ability getAbility() {
+        return ability;
     }
-    public void setAbilities(ArrayList abilities) {
-        this.abilities = abilities;
+    public void setAbility(Ability ability) {
+        this.ability = ability;
     }
 
     @Override
     public String toString() {
         return "AbilitiesReturn{" +
-                "abilities=" + abilities +
+                "ability=" + ability +
                 '}';
     }
 }

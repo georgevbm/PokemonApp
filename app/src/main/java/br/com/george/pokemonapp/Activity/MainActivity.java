@@ -10,7 +10,7 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 
-import br.com.george.pokemonapp.Adapter.TypeAdapter;
+import br.com.george.pokemonapp.Adapter.TypeGridAdapter;
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.Style.TypeStyle;
 import br.com.george.pokemonapp.R;
@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private GridView gridTypes;
-    private TypeAdapter adapter;
+    private TypeGridAdapter adapter;
     private ArrayList<Type> types;
     private ArrayList<TypeStyle> styles;
     private ArrayList<PokemonThirdReturn> pokemons;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                adapter = new TypeAdapter(MainActivity.this, types);
+                adapter = new TypeGridAdapter(MainActivity.this, types);
                 gridTypes.setAdapter(adapter);
 
                 gridTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {

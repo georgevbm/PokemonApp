@@ -4,13 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 
+import br.com.george.pokemonapp.Return.AbilitiesReturn;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     private int id;
     private String name;
     private double weight;
     private double height;
-    private ArrayList abilities;
+    private ArrayList<AbilitiesReturn> abilities;
     private Sprite sprites;
 
     public int getId() {
@@ -41,10 +43,10 @@ public class Pokemon {
         this.height = height;
     }
 
-    public ArrayList getAbilities() {
+    public ArrayList<AbilitiesReturn> getAbilities() {
         return abilities;
     }
-    public void setAbilities(ArrayList abilities) {
+    public void setAbilities(ArrayList<AbilitiesReturn> abilities) {
         this.abilities = abilities;
     }
 
@@ -63,7 +65,6 @@ public class Pokemon {
                 ", weight=" + weight +
                 ", height=" + height +
                 ", abilities=" + abilities +
-                ", sprites=" + sprites +
-                '}';
+                ", sprites=" + sprites;
     }
 }

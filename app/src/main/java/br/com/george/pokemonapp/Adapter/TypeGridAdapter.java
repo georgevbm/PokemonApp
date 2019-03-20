@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.R;
 
-public class TypeAdapter extends ArrayAdapter {
+public class TypeGridAdapter extends ArrayAdapter {
 
     private Context context;
     private ArrayList<Type> types;
 
-    public TypeAdapter(@NonNull Context c, @NonNull ArrayList<Type> objects) {
+    public TypeGridAdapter(@NonNull Context c, @NonNull ArrayList<Type> objects) {
         super(c, 0, objects);
         context = c;
         types = objects;
@@ -34,7 +34,7 @@ public class TypeAdapter extends ArrayAdapter {
 
         if (types != null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.adapter_types, parent, false);
+            view = inflater.inflate(R.layout.adapter_grid_types, parent, false);
 
             ImageView iconType = (ImageView) view.findViewById(R.id.icon_type);
             TextView nameType = (TextView) view.findViewById(R.id.name_type);

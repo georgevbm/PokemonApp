@@ -3,8 +3,15 @@ package br.com.george.pokemonapp.Model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Ability {
+public class TypeList {
+
     private String name;
+    private int medal;
+
+    public TypeList(String name, int medal) {
+        this.name = name;
+        this.medal = medal;
+    }
 
     public String getName() {
         return name;
@@ -13,8 +20,10 @@ public class Ability {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + name + "\n";
+    public int getMedal() {
+        return medal;
+    }
+    public void setMedal(int medal) {
+        this.medal = medal;
     }
 }
