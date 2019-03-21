@@ -33,7 +33,7 @@ Este projeto foi dividido em pacotes para uma melhor organização do código, o
 - PokemonService
 - RetrofitConfig
 
-## Algumas bibliotecas/recursos utilizadas:
+## Algumas bibliotecas/recursos utilizados:
 
 - **Retrofit** - Biblioteca utilizada para realizar as requisições a PokeAPI, esta biblioteca facilita a comunicação entre a aplicação e a API.
 - **Jackson** - Biblioteca de tratamento de arquivos JSON, para a conversão destes arquivos para objetos.
