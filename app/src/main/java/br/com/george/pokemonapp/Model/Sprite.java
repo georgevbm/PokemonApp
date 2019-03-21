@@ -2,21 +2,24 @@ package br.com.george.pokemonapp.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/* Definição da classe Sprite */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sprite {
-    private String front_default;
+    private String frontDefault;
 
-    public String getFront_default() {
-        return front_default;
+    public String getFrontDefault() {
+        return frontDefault;
     }
-    public void setFront_default(String front_default) {
-        this.front_default = front_default;
+
+    public void setFrontDefault(String frontDefault) {
+        this.frontDefault = frontDefault;
     }
 
     @Override
     public String toString() {
         return "Sprite{" +
-                "front_default='" + front_default + '\'' +
+                "frontDefault='" + frontDefault + '\'' +
                 '}';
     }
 }

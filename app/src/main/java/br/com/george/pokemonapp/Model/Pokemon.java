@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import br.com.george.pokemonapp.Return.AbilitiesReturn;
 
+/* Definição da classe Pokemon */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     private int id;
@@ -18,6 +20,7 @@ public class Pokemon {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -25,6 +28,7 @@ public class Pokemon {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -32,6 +36,7 @@ public class Pokemon {
     public double getWeight() {
         return weight;
     }
+
     public void setWeight(double weight) {
         this.weight = weight;
     }
@@ -39,6 +44,7 @@ public class Pokemon {
     public double getHeight() {
         return height;
     }
+
     public void setHeight(double height) {
         this.height = height;
     }
@@ -46,6 +52,7 @@ public class Pokemon {
     public ArrayList<AbilitiesReturn> getAbilities() {
         return abilities;
     }
+
     public void setAbilities(ArrayList<AbilitiesReturn> abilities) {
         this.abilities = abilities;
     }
@@ -53,18 +60,18 @@ public class Pokemon {
     public Sprite getSprites() {
         return sprites;
     }
+
     public void setSprites(Sprite sprites) {
         this.sprites = sprites;
     }
 
     @Override
     public String toString() {
-        return "Pokemon{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", weight=" + weight +
-                ", height=" + height +
-                ", abilities=" + abilities +
-                ", sprites=" + sprites;
+        return "Id: " + id +
+                "Name: " + name + "\n" +
+                "Weight: " + weight + "\n" +
+                "Height: " + height + "\n" +
+                "Abilities: " + abilities + "\n" +
+                "Sprites: " + sprites;
     }
 }

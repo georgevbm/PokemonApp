@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F44336</color>
-    <color name="colorPrimaryDark">#BB372F</color>
-    <color name="colorAccent">#009688</color>
+    <color name="colorPrimaryDark">#B63F35</color>
+    <color name="colorAccent">#FFEB3B</color>
 
-    <color name="colorNormal">#D4D4D4</color>
-    <color name="colorFighting">#C49248</color>
-    <color name="colorFlying">#03A9F4</color>
-    <color name="colorPoison">#673AB7</color>
-    <color name="colorGround">#D4AB82</color>
-    <color name="colorRock">#868E9E</color>
-    <color name="colorBug">#8BC34A</color>
-    <color name="colorGhost">#384188</color>
-    <color name="colorSteel">#0E4050</color>
-    <color name="colorFire">#FF5722</color>
-    <color name="colorWater">#2196F3</color>
-    <color name="colorGrass">#8BC34A</color>
-    <color name="colorEletric">#0E4050</color>
-    <color name="colorPsychic">#673AB7</color>
-    <color name="colorIce">#59628F</color>
-    <color name="colorDragon">#D8C739</color>
-    <color name="colorDark">#615F5F</color>
-    <color name="colorFairy">#785BAC</color>
+    <!--<color name="colorNormal">#D4D4D4</color>-->
+    <!--<color name="colorFighting">#C49248</color>-->
+    <!--<color name="colorFlying">#03A9F4</color>-->
+    <!--<color name="colorPoison">#673AB7</color>-->
+    <!--<color name="colorGround">#D4AB82</color>-->
+    <!--<color name="colorRock">#868E9E</color>-->
+    <!--<color name="colorBug">#8BC34A</color>-->
+    <!--<color name="colorGhost">#384188</color>-->
+    <!--<color name="colorSteel">#0E4050</color>-->
+    <!--<color name="colorFire">#FF5722</color>-->
+    <!--<color name="colorWater">#2196F3</color>-->
+    <!--<color name="colorGrass">#8BC34A</color>-->
+    <!--<color name="colorEletric">#0E4050</color>-->
+    <!--<color name="colorPsychic">#673AB7</color>-->
+    <!--<color name="colorIce">#59628F</color>-->
+    <!--<color name="colorDragon">#D8C739</color>-->
+    <!--<color name="colorDark">#615F5F</color>-->
+    <!--<color name="colorFairy">#785BAC</color>-->
 </resources>

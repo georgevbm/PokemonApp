@@ -2,6 +2,8 @@ package br.com.george.pokemonapp.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/* Definição da classe Type  */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TypeList {
 

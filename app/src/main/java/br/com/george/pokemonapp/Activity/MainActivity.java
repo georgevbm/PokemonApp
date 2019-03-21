@@ -7,9 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
 import java.util.ArrayList;
-
 import br.com.george.pokemonapp.Adapter.TypeGridAdapter;
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.Style.TypeStyle;
@@ -35,29 +33,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(R.string.select_type);
 
+        // Capturando componente Grid do layout da tela principal
         this.gridTypes = (GridView) findViewById(R.id.grid_types);
+
+        // Inicializando ArrayLists utilizados para armazenamento de dados
         types = new ArrayList<>();
         pokemons = new ArrayList<>();
 
+        // Chamada do método populateStylesType
         populateStylesType();
 
+        /* Captura uma instância de PokemonService e chama o método que retorna
+        *  os tipos de Pokemon*/
         Call<TypeReturn> call = new RetrofitConfig().getPokemonService().getTypes();
         call.enqueue(new Callback<TypeReturn>() {
+            /* Trata as respostas da requisição à PokeAPI */
             @Override
             public void onResponse(Call<TypeReturn> call, Response<TypeReturn> response) {
+                /* Captura os resultados da PokeAPI e guarna em uma variável de retorno */
                 TypeReturn typeReturn = response.body();
 
+                /* Pega o retorno de Pokemons do tipo específico */
                 types = typeReturn.getResults();
 
+                /* Remove os tipos unknown e shadow, pelo fato de não terem Pokemons pra retornar*/
                 types.remove(types.size() - 1);
                 types.remove(types.size() - 1);
 
                 for (Type t : types) {
+                    /* Gera os códigos de cada tipo de Pokemon */
                     t.setCod(Integer.parseInt(t.getUrl().substring(t.getUrl().length() - 3).replace("/", "")));
 
+                    /* Colocando letras maiúsculas nos nomes dos tipos de Pokemon */
                     String n = t.getName().substring(0, 1).toUpperCase().concat(t.getName().substring(1));
                     t.setName(n);
 
+                    /* Setando o estilo dos tipos de Pokemon */
                     for (TypeStyle ts : styles) {
                         if (t.getCod() == ts.getCod()) {
                             t.setStyle(ts);
@@ -65,21 +76,22 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+                /* Setando um adapter personalizado para o grid da tela inicial */
                 adapter = new TypeGridAdapter(MainActivity.this, types);
                 gridTypes.setAdapter(adapter);
 
+                /* Evento de click para os itens do grid da tela inicial */
                 gridTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                         for (Type type : types) {
                             if (position + 1 == type.getCod()) {
-                                int backgroundColor = backgroundListPokemons(type.getCod());
-
+                                /* Passa dados para a tela de apresentação dos pokemons de determinado tipo */
                                 Intent intent = new Intent(MainActivity.this, PokemonsActivity.class);
                                 intent.putExtra("nameType", type.getName());
                                 intent.putExtra("codType", type.getCod());
-                                intent.putExtra("backgrounType", backgroundColor);
+                                intent.putExtra("backgrounType", R.color.colorPrimaryDark);
                                 startActivity(intent);
                             }
                         }
@@ -87,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
 
+            /* Método que trata as falhas da requisição a PokeAPI */
             @Override
             public void onFailure(Call<TypeReturn> call, Throwable t) {
                 Log.e("PokemonService   ", "Erro ao buscar os types:" + t.getMessage());
@@ -94,49 +107,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private int backgroundListPokemons(int cod) {
-        switch (cod) {
-            case 1:
-                return R.color.colorNormal;
-            case 2:
-                return R.color.colorFighting;
-            case 3:
-                return R.color.colorFlying;
-            case 4:
-                return R.color.colorPoison;
-            case 5:
-                return R.color.colorGround;
-            case 6:
-                return R.color.colorRock;
-            case 7:
-                return R.color.colorBug;
-            case 8:
-                return R.color.colorGhost;
-            case 9:
-                return R.color.colorSteel;
-            case 10:
-                return R.color.colorFire;
-            case 11:
-                return R.color.colorWater;
-            case 12:
-                return R.color.colorGrass;
-            case 13:
-                return R.color.colorEletric;
-            case 14:
-                return R.color.colorPsychic;
-            case 15:
-                return R.color.colorIce;
-            case 16:
-                return R.color.colorDragon;
-            case 17:
-                return R.color.colorDark;
-            case 18:
-                return R.color.colorFairy;
-            default:
-                return 0;
-        }
-    }
-
+    /* Método para criação do estilo da tela inicial, este método associa
+    *  cada Drawable a um tipo de Pokemon retornado pela PokeAPI
+    * */
     private void populateStylesType() {
         styles = new ArrayList<>();
 

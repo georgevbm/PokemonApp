@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import br.com.george.pokemonapp.R;
 import br.com.george.pokemonapp.Return.AbilitiesReturn;
+
+/* Adapter criado para a apresentação das habilidades de dos Pokemons na tela
+ * de apresentação dos Pokemons. Este adapter é setado em um Grid para uma
+ * melhor vizualização das habilidades */
 
 public class AbilityGridAdapter extends ArrayAdapter {
 

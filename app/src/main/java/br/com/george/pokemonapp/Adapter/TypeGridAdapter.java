@@ -10,11 +10,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.R;
+
+/* Adapter criado para a apresentação dos tipos de Pokemons na tela de inicial.
+ * Este adapter é setado em um Grid. */
 
 public class TypeGridAdapter extends ArrayAdapter {
 

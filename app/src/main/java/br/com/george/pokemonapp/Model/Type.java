@@ -2,6 +2,8 @@ package br.com.george.pokemonapp.Model;
 
 import br.com.george.pokemonapp.Style.TypeStyle;
 
+/* Definição da classe Type */
+
 public class Type {
     private int cod;
     private String name;
@@ -11,6 +13,7 @@ public class Type {
     public int getCod() {
         return cod;
     }
+
     public void setCod(int cod) {
         this.cod = cod;
     }
@@ -18,6 +21,7 @@ public class Type {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -25,6 +29,7 @@ public class Type {
     public TypeStyle getStyle() {
         return style;
     }
+
     public void setStyle(TypeStyle style) {
         this.style = style;
     }
@@ -32,13 +37,14 @@ public class Type {
     public String getUrl() {
         return url;
     }
+
     public void setUrl(String url) {
         this.url = url;
     }
 
     @Override
     public String toString() {
-        return  "Cod: " + cod + "\n" +
+        return "Cod: " + cod + "\n" +
                 "Name: " + name + "\n" +
                 "Url: " + url + "\n" +
                 "Style: " + style.toString();
