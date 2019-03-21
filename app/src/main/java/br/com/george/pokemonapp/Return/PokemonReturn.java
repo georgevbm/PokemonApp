@@ -4,13 +4,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 
-@JsonIgnoreProperties({"damage_relations", "game_indices", "generation", "id", "move_damage_class", "moves", "name", "names"})
+/* Classe que trata o primeiro retorno dos Pokemons de um tipo selecionado */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PokemonReturn {
     private ArrayList<PokemonSecondReturn> pokemon;
 
     public ArrayList<PokemonSecondReturn> getPokemon() {
         return pokemon;
     }
+
     public void setPokemon(ArrayList<PokemonSecondReturn> pokemon) {
         this.pokemon = pokemon;
     }

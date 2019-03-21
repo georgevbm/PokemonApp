@@ -7,6 +7,8 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
+/* Interface que define os métodos de busca através do retrofit */
+
 public interface PokemonService {
 
     @GET("type")

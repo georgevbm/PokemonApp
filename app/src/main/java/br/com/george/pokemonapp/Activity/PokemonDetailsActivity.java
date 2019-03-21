@@ -9,7 +9,9 @@ import android.util.Log;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.io.InputStream;
+
 import br.com.george.pokemonapp.Adapter.AbilityGridAdapter;
 import br.com.george.pokemonapp.Model.Pokemon;
 import br.com.george.pokemonapp.R;
@@ -71,11 +73,11 @@ public class PokemonDetailsActivity extends AppCompatActivity {
 
                 /* Setando os valores nos componentes da tela de detalhes do Pokemon */
                 namePokemonDetails.setText(sb.toString());
-                weightPokemonDetails.setText(String.valueOf(pokemon.getWeight()/10) + "kg");
-                heightPokemonDetails.setText(String.valueOf(pokemon.getHeight()/10) + "m");
+                weightPokemonDetails.setText(String.valueOf(pokemon.getWeight() / 10) + "kg");
+                heightPokemonDetails.setText(String.valueOf(pokemon.getHeight() / 10) + "m");
                 gridAbilities.setAdapter(new AbilityGridAdapter(PokemonDetailsActivity.this, pokemon.getAbilities()));
                 new DownloadImageTask((ImageView) findViewById(R.id.image_pokemon_details))
-                        .execute(pokemon.getSprites().getFrontDefault());
+                        .execute(pokemon.getSprites().getFront_default());
             }
 
             /* Método que trata as falhas da requisição a PokeAPI */

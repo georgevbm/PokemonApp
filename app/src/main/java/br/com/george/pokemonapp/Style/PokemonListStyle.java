@@ -1,7 +1,8 @@
 package br.com.george.pokemonapp.Style;
 
-public class PokemonListStyle {
+/* Classe que define o estilo (Plano de fundo) da lista de Pokemons */
 
+public class PokemonListStyle {
     private String name;
     private int background;
     private String cod;
@@ -15,6 +16,7 @@ public class PokemonListStyle {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -22,6 +24,7 @@ public class PokemonListStyle {
     public int getBackground() {
         return background;
     }
+
     public void setBackground(int background) {
         this.background = background;
     }
@@ -29,6 +32,7 @@ public class PokemonListStyle {
     public String getCod() {
         return cod;
     }
+
     public void setCod(String cod) {
         this.cod = cod;
     }

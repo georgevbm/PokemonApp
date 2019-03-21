@@ -7,13 +7,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
 import java.util.ArrayList;
+
 import br.com.george.pokemonapp.Adapter.TypeGridAdapter;
 import br.com.george.pokemonapp.Model.Type;
-import br.com.george.pokemonapp.Style.TypeStyle;
 import br.com.george.pokemonapp.R;
 import br.com.george.pokemonapp.Return.PokemonThirdReturn;
 import br.com.george.pokemonapp.Return.TypeReturn;
+import br.com.george.pokemonapp.Style.TypeStyle;
 import br.com.george.pokemonapp.Util.RetrofitConfig;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         populateStylesType();
 
         /* Captura uma instância de PokemonService e chama o método que retorna
-        *  os tipos de Pokemon*/
+         *  os tipos de Pokemon*/
         Call<TypeReturn> call = new RetrofitConfig().getPokemonService().getTypes();
         call.enqueue(new Callback<TypeReturn>() {
             /* Trata as respostas da requisição à PokeAPI */
@@ -108,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /* Método para criação do estilo da tela inicial, este método associa
-    *  cada Drawable a um tipo de Pokemon retornado pela PokeAPI
-    * */
+     *  cada Drawable a um tipo de Pokemon retornado pela PokeAPI
+     * */
     private void populateStylesType() {
         styles = new ArrayList<>();
 

@@ -2,5 +2,4 @@
     <string name="app_name">PokemonApp</string>
     <string name="select_type">Select a type of pokemon</string>
     <string name="button_back">Back</string>
-
 </resources>

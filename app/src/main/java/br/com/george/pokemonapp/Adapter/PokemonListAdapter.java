@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.ArrayList;
-import br.com.george.pokemonapp.Style.PokemonListStyle;
+
 import br.com.george.pokemonapp.R;
+import br.com.george.pokemonapp.Style.PokemonListStyle;
 
 /* Adapter criado para a apresentação dos Pokemons de um tipo selecionado
  * na tela de listagens de Pokemons. Este adapter é setado em um List. */

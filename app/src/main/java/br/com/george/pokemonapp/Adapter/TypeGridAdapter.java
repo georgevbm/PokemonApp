@@ -10,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.ArrayList;
+
 import br.com.george.pokemonapp.Model.Type;
 import br.com.george.pokemonapp.R;
 

@@ -6,20 +6,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sprite {
-    private String frontDefault;
+    private String front_default;
 
-    public String getFrontDefault() {
-        return frontDefault;
+    public String getFront_default() {
+        return front_default;
     }
 
-    public void setFrontDefault(String frontDefault) {
-        this.frontDefault = frontDefault;
+    public void setFront_default(String front_default) {
+        this.front_default = front_default;
     }
 
     @Override
     public String toString() {
-        return "Sprite{" +
-                "frontDefault='" + frontDefault + '\'' +
-                '}';
+        return "Front Default: " + front_default + "\n";
     }
 }

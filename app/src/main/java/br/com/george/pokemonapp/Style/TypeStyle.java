@@ -1,7 +1,8 @@
 package br.com.george.pokemonapp.Style;
 
-public class TypeStyle {
+/* Classe que define o estilo dos tipos de Pokemons da tela inicial */
 
+public class TypeStyle {
     private int cod;
     private int icon;
     private int medal;
