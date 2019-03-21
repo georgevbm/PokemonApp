@@ -67,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     t.setCod(Integer.parseInt(t.getUrl().substring(t.getUrl().length() - 3).replace("/", "")));
 
                     /* Colocando letras maiúsculas nos nomes dos tipos de Pokemon */
-                    String n = t.getName().substring(0, 1).toUpperCase().concat(t.getName().substring(1));
-                    t.setName(n);
+                    t.setName(nameUpperCase(t.getName()));
 
                     /* Setando o estilo dos tipos de Pokemon */
                     for (TypeStyle ts : styles) {
@@ -152,6 +151,21 @@ public class MainActivity extends AppCompatActivity {
         styles.add(styleDragon);
         styles.add(styleDark);
         styles.add(styleFairy);
+    }
+
+    /* Método para deixar a primeira letra das palavras maiúsculas */
+    private String nameUpperCase(String name) {
+        String n = name.substring(0, 1).toUpperCase().concat(name.substring(1)).replace("-", " ");
+        String[] partes = n.split(" ");
+
+        StringBuilder sb = new StringBuilder();
+        for (int j = 0; j < partes.length; j++) {
+            String word = partes[j];
+            word = word.substring(0, 1).toUpperCase() + word.substring(1);
+            sb.append(" ").append(word);
+        }
+
+        return sb.toString();
     }
 
 

@@ -61,7 +61,7 @@ public class PokemonsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PokemonReturn> call, Response<PokemonReturn> response) {
                 /* Captura os resultados da PokeAPI e guarna em uma variável de retorno */
-                PokemonReturn pokemonReturn = response.body();
+                final PokemonReturn pokemonReturn = response.body();
 
                 for(PokemonSecondReturn ptr: pokemonReturn.getPokemon()){
                     /* Gerando o código dos Pokemons, sendo necessário retirar alguns caracteres
@@ -87,20 +87,9 @@ public class PokemonsActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(PokemonsActivity.this, PokemonDetailsActivity.class);
 
-                        /* Deixando as primeiras letras dos nomes maiúsculas */
-                        String n = pokemonNames.get(i).getName().substring(0, 1).toUpperCase().concat(pokemonNames.get(i).getName().substring(1)).replace("-", " ");
-                        String[] partes = n.split(" ");
-
-                        StringBuilder sb = new StringBuilder();
-                        for (int j = 0; j < partes.length; j++) {
-                            String word = partes[j];
-                            word = word.substring(0, 1).toUpperCase() + word.substring(1);
-                            sb.append(" ").append(word);
-                        }
-
                         /* Passa dados para a tela de apresentação dos pokemons de determinado tipo */
                         intent.putExtra("codPokemon", pokemonNames.get(i).getCod());
-                        intent.putExtra("namePokemon", sb.toString());
+                        intent.putExtra("namePokemon", nameUpperCase(pokemonNames.get(i).getName()));
                         startActivity(intent);
                     }
                 });
@@ -112,5 +101,20 @@ public class PokemonsActivity extends AppCompatActivity {
                 Log.e("PokemonService   ", "Erro ao buscar os pokemonThirdReturns:" + t.getMessage());
             }
         });
+    }
+
+    /* Método para deixar a primeira letra das palavras maiúsculas */
+    private String nameUpperCase(String name) {
+        String n = name.substring(0, 1).toUpperCase().concat(name.substring(1)).replace("-", " ");
+        String[] partes = n.split(" ");
+
+        StringBuilder sb = new StringBuilder();
+        for (int j = 0; j < partes.length; j++) {
+            String word = partes[j];
+            word = word.substring(0, 1).toUpperCase() + word.substring(1);
+            sb.append(" ").append(word);
+        }
+
+        return sb.toString();
     }
 }
